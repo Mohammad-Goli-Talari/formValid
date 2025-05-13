@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Event Registration Form</title>
+</head>
+
+<body>
+    <h1>Event Registration Form</h1>
+    <form id="registration-form">
+        <fieldset id="personal-info">
+            <legend>Personal Information</legend>
+            <div>
+                <label for="attendee-name">Full Name:</label>
+                <input type="text" id="attendee-name" name="attendee-name" placeholder="Jane Doe">
+            </div>
+
+            <div>
+                <label for="attendee-email">Email Address:</label>
+                <input type="email" id="attendee-email" name="attendee-email" placeholder="jane@example.com">
+            </div>
+            
+            <div>
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="123-456-7890">
+            </div>
+        </fieldset>
+        
+        <hr>
+        
+        <fieldset id="event-details">
+            <legend>Event Information</legend>
+            <div>
+                <label for="ticket-code">Ticket Code:</label>
+                <input type="text" id="ticket-code" name="ticket-code" placeholder="EVT-2025-####">
+            </div>
+            
+            <div>
+                <label for="attendees">Number of Attendees:</label>
+                <input type="number" id="attendees" name="attendees" min="1" max="10">
+            </div>
+            
+            <div>
+                <label for="event-date">Preferred Date:</label>
+                <input type="date" id="event-date" name="event-date">
+            </div>
+        </fieldset>
+        
+        <fieldset id="interests-group" class="checkbox-group">
+            <legend>Areas of Interest:</legend>
+            <div>
+                <input type="checkbox" id="technology" name="interests" value="technology">
+                <label for="technology">Technology</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="business" name="interests" value="business">
+                <label for="business">Business</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="science" name="interests" value="science">
+                <label for="science">Science</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="other-interest" name="interests" value="other">
+                <label for="other-interest">Other</label>
+            </div>
+        </fieldset>
+
+        <div id="interests-description-container">
+            <label for="interests-description">Please Specify Your Interests:</label>
+            <textarea placeholder="Please describe your interests in at least 30 characters if you selected 'Other'"
+                name="interests-textarea" id="interests-description"></textarea>
+        </div>
+        
+        <fieldset id="accommodation-group" class="radio-group">
+            <legend>Accommodation Needed:</legend>
+            <div>
+                <input type="radio" name="accommodation" id="none" value="none">
+                <label for="none">None</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="accommodation" id="standard" value="standard">
+                <label for="standard">Standard</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="accommodation" id="premium" value="premium">
+                <label for="premium">Premium</label>
+            </div>
+            
+            <div>
+                <input type="radio" name="accommodation" id="custom" value="custom">
+                <label for="custom">Custom</label>
+            </div>
+        </fieldset>
+
+        <div id="accommodation-description-container">
+            <label for="accommodation-description">Special Accommodation Requests:</label>
+            <textarea placeholder="Please describe your accommodation needs in at least 30 characters if you selected 'Custom'"
+                name="accommodation-textarea" id="accommodation-description"></textarea>
+        </div>
+        
+        <div id="terms-container">
+            <input type="checkbox" id="terms-agreement" name="terms">
+            <label for="terms-agreement">I agree to the terms and conditions</label>
+        </div>
+        
+        <div id="btn-container">
+            <button type="submit" id="submit-btn">Register</button>
+            <span id="message-box"></span>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
