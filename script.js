@@ -32,7 +32,7 @@ function formValidation() {
         "ticket-code": ticketCodeRegex.test(ticketCode.value),
         "attendees": !isNaN(attendees.value) && attendees.value <= 10,
         "event-date": eventDateRegex.test(eventDate.value),
-        "interests-group": Array.fromm(checkBoxes).some(checkbox => checkbox.checked),
+        "interests-group": Array.from(checkBoxes).some(checkbox => checkbox.checked),
         "interests-description": (otherInterest.checked && interestsDescription.value.length >= 30) || (!otherInterest.checked),
         "accommodation-group": Array.from(radios).some(radio => radio.checked),
         "accommodation-description": (otherAccommodation.checked && accommodationDescription.value.length >= 30) || (!otherAccommodation.checked),
