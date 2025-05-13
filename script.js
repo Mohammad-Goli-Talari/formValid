@@ -21,7 +21,6 @@ function getValidationResult() {
     const emailRegex = /^[a-zA-Z0-9_.+-]@\$/;
     const phoneNumberRegex = /^[0-9]{3}-[0-9]{3}[0-9]{4}$/;
     const ticketCodeRegex = /^EVT-2025-\[0-9]{4}$/;
-    const eventDateRegex = /(0[1-9]|1[012])[\/](0[1-9]|[12][0-9]|3[01])[\/](19|20)\d\d/
     const checkBoxes = interestsGroup.querySelectorAll('input[type="checkbox"]');
     const radios = accommodationGroup.querySelectorAll('input[type="radio"]');
 
@@ -31,7 +30,7 @@ function getValidationResult() {
         "phone-number": phoneNumberRegex.test(phoneNumber.value),
         "ticket-code": ticketCodeRegex.test(ticketCode.value),
         "attendees": !isNaN(attendees.value) && attendees.value <= 10,
-        "event-date": eventDateRegex.test(eventDate.value),
+        "event-date": eventDate.value ? true : false,
         "interests-group": Array.from(checkBoxes).some(checkbox => checkbox.checked),
         "interests-description": (otherInterest.checked && interestsDescription.value.length >= 30) || (!otherInterest.checked),
         "accommodation-group": Array.from(radios).some(radio => radio.checked),
